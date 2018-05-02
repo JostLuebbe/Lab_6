@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon Apr 23 13:09:15 2018
+| Date         : Fri Apr 27 19:36:47 2018
 | Host         : DESKTOP-COSF6I6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file stopwatch_control_sets_placed.rpt
 | Design       : stopwatch
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    30 |
-| Unused register locations in slices containing registers |   195 |
+| Number of unique control sets                            |     9 |
+| Unused register locations in slices containing registers |    42 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,60 +33,39 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               1 |            1 |
-| No           | No                    | Yes                    |              59 |           25 |
-| No           | Yes                   | No                     |               9 |            9 |
+| No           | No                    | No                     |               9 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              45 |           15 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               8 |            8 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               8 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------+---------------------+---------------------------+------------------+----------------+
-|        Clock Signal        |    Enable Signal    |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
-+----------------------------+---------------------+---------------------------+------------------+----------------+
-|  clock_IBUF_BUFG           |                     |                           |                1 |              1 |
-|  digit2_reg[1]_LDC_i_1_n_0 |                     | digit2_reg[1]_LDC_i_2_n_0 |                1 |              1 |
-|  digit0_reg[3]_LDC_i_1_n_0 |                     | digit0_reg[3]_LDC_i_2_n_0 |                1 |              1 |
-|  digit2_reg[0]_LDC_i_1_n_0 |                     | digit2_reg[0]_LDC_i_2_n_0 |                1 |              1 |
-|  digit3_reg[2]_LDC_i_1_n_0 |                     | digit3_reg[2]_LDC_i_2_n_0 |                1 |              1 |
-|  digit3_reg[3]_LDC_i_1_n_0 |                     | digit3_reg[3]_LDC_i_2_n_0 |                1 |              1 |
-|  digit3_reg[0]_LDC_i_1_n_0 |                     | digit3_reg[0]_LDC_i_2_n_0 |                1 |              1 |
-|  digit2_reg[2]_LDC_i_1_n_0 |                     | digit2_reg[2]_LDC_i_2_n_0 |                1 |              1 |
-|  digit3_reg[1]_LDC_i_1_n_0 |                     | digit3_reg[1]_LDC_i_2_n_0 |                1 |              1 |
-|  digit2_reg[3]_LDC_i_1_n_0 |                     | digit2_reg[3]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit2_reg[0]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit2_reg[1]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit3_reg[3]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit2_reg[2]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit3_reg[0]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit3_reg[1]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit3_reg[2]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit2_reg[3]_LDC_i_2_n_0 |                1 |              1 |
-|  slow_clock                | digit2[3]_P_i_1_n_0 | digit2_reg[1]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit2[3]_P_i_1_n_0 | digit2_reg[0]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit2[3]_P_i_1_n_0 | digit2_reg[2]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit2[3]_P_i_1_n_0 | digit2_reg[3]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit3[3]_P_i_1_n_0 | digit3_reg[2]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit3[3]_P_i_1_n_0 | digit3_reg[3]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit3[3]_P_i_1_n_0 | digit3_reg[0]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                | digit3[3]_P_i_1_n_0 | digit3_reg[1]_LDC_i_1_n_0 |                1 |              1 |
-|  slow_clock                |                     | digit0_reg[3]_LDC_i_1_n_0 |                3 |              4 |
-|  slow_clock                |                     | digit0_reg[3]_LDC_i_2_n_0 |                3 |              4 |
-|  slow_clock                |                     | reset_IBUF                |                2 |              4 |
-|  clock_IBUF_BUFG           |                     | reset_IBUF                |                9 |             39 |
-+----------------------------+---------------------+---------------------------+------------------+----------------+
++---------------------+----------------------+-------------------------------+------------------+----------------+
+|     Clock Signal    |     Enable Signal    |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
++---------------------+----------------------+-------------------------------+------------------+----------------+
+|  ds1/dp             |                      |                               |                1 |              1 |
+|  c1/CLK             |                      |                               |                1 |              4 |
+|  c1/stopwatch_clock |                      |                               |                1 |              4 |
+|  c1/stopwatch_clock |                      | c2/digit1[2]_i_1_n_0          |                2 |              4 |
+|  c1/stopwatch_clock |                      | c2/digit1[3]_i_1_n_0          |                3 |              4 |
+|  c1/stopwatch_clock | c2/digit3[3]_i_2_n_0 | c2/digit3[3]_i_1_n_0          |                3 |              4 |
+|  c1/stopwatch_clock | c2/digit2[3]_i_1_n_0 | c2/digit3[3]_i_1_n_0          |                1 |              4 |
+|  clock_IBUF_BUFG    |                      | c1/clear                      |                5 |             17 |
+|  clock_IBUF_BUFG    |                      | c1/stopwatch_count[0]_i_1_n_0 |                5 |             20 |
++---------------------+----------------------+-------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 1      |                    26 |
-| 4      |                     3 |
-| 16+    |                     1 |
+| 1      |                     1 |
+| 4      |                     6 |
+| 16+    |                     2 |
 +--------+-----------------------+
 
 

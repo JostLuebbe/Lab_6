@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Apr 23 13:08:53 2018
-# Process ID: 896
+# Start of session at: Fri Apr 27 19:36:26 2018
+# Process ID: 12736
 # Current directory: C:/GitHub/Lab_6/Lab_6.runs/impl_1
 # Command line: vivado.exe -log stopwatch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source stopwatch.tcl -notrace
 # Log file: C:/GitHub/Lab_6/Lab_6.runs/impl_1/stopwatch.vdi

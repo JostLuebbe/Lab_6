@@ -30,7 +30,9 @@ set_property ip_output_repo c:/GitHub/Lab_6/Lab_6.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/clock_divider.v
-  C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/sseg_control.v
+  C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/counter.v
+  C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/digit_selector.v
+  C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/sseg.v
   C:/GitHub/Lab_6/Lab_6.srcs/sources_1/new/stopwatch_main.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

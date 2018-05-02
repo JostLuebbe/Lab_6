@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon Apr 23 13:09:32 2018
+| Date         : Fri Apr 27 19:37:03 2018
 | Host         : DESKTOP-COSF6I6 running 64-bit major release  (build 9200)
 | Command      : report_drc -file stopwatch_drc_routed.rpt -pb stopwatch_drc_routed.pb -rpx stopwatch_drc_routed.rpx
 | Design       : stopwatch
@@ -24,13 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 10
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning  | Gated clock check                                   | 9          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 6
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 3          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -49,47 +50,38 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net digit0_reg[3]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit0_reg[3]_LDC_i_1/O, cell digit0_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net c1/CLK is a gated clock net sourced by a combinational pin c1/pattern[3]_i_1/O, cell c1/pattern[3]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net digit2_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit2_reg[0]_LDC_i_1/O, cell digit2_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net c1/stopwatch_clock is a gated clock net sourced by a combinational pin c1/digit3[3]_i_4/O, cell c1/digit3[3]_i_4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net digit2_reg[1]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit2_reg[1]_LDC_i_1/O, cell digit2_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ds1/dp is a gated clock net sourced by a combinational pin ds1/reg_dp_reg_i_1/O, cell ds1/reg_dp_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
-PDRC-153#4 Warning
-Gated clock check  
-Net digit2_reg[2]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit2_reg[2]_LDC_i_1/O, cell digit2_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT c1/digit3[3]_i_4 is driving clock pin of 20 cells. This could lead to large hold time violations. First few involved cells are:
+    c2/digit1_reg[3] {FDRE}
+    c2/digit0_reg[2] {FDRE}
+    c2/digit2_reg[2] {FDRE}
+    c2/digit0_reg[1] {FDRE}
+    c2/digit1_reg[0] {FDRE}
+
 Related violations: <none>
 
-PDRC-153#5 Warning
-Gated clock check  
-Net digit2_reg[3]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit2_reg[3]_LDC_i_1/O, cell digit2_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT c1/pattern[3]_i_1 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    ds1/pattern_reg[0] {FDRE}
+    ds1/pattern_reg[3] {FDRE}
+    ds1/pattern_reg[1] {FDRE}
+    ds1/pattern_reg[2] {FDRE}
 
-PDRC-153#6 Warning
-Gated clock check  
-Net digit3_reg[0]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit3_reg[0]_LDC_i_1/O, cell digit3_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#7 Warning
-Gated clock check  
-Net digit3_reg[1]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit3_reg[1]_LDC_i_1/O, cell digit3_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#8 Warning
-Gated clock check  
-Net digit3_reg[2]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit3_reg[2]_LDC_i_1/O, cell digit3_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#9 Warning
-Gated clock check  
-Net digit3_reg[3]_LDC_i_1_n_0 is a gated clock net sourced by a combinational pin digit3_reg[3]_LDC_i_1/O, cell digit3_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 
