@@ -75,10 +75,7 @@ module counter(
                             digit2 <= 0;
                             if(digit3 == 9)
                             begin
-                                digit0 <= 9;
-                                digit1 <= 9;
-                                digit2 <= 9;
-                                digit3 <= 9;
+                                digit0 <= 0;
                             end
                             else
                                 digit3 <= digit3 + 1;

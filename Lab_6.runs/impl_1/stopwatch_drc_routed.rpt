@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Fri Apr 27 19:37:03 2018
+| Date         : Wed May  2 14:08:06 2018
 | Host         : DESKTOP-COSF6I6 running 64-bit major release  (build 9200)
 | Command      : report_drc -file stopwatch_drc_routed.rpt -pb stopwatch_drc_routed.pb -rpx stopwatch_drc_routed.rpx
 | Design       : stopwatch
@@ -66,21 +66,21 @@ Related violations: <none>
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT c1/digit3[3]_i_4 is driving clock pin of 20 cells. This could lead to large hold time violations. First few involved cells are:
-    c2/digit1_reg[3] {FDRE}
+    c2/button_n_ff_reg {FDRE}
+    c2/digit0_reg[0] {FDRE}
     c2/digit0_reg[2] {FDRE}
-    c2/digit2_reg[2] {FDRE}
     c2/digit0_reg[1] {FDRE}
-    c2/digit1_reg[0] {FDRE}
+    c2/digit0_reg[3] {FDRE}
 
 Related violations: <none>
 
 PLHOLDVIO-2#2 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT c1/pattern[3]_i_1 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    ds1/pattern_reg[2] {FDRE}
+    ds1/pattern_reg[1] {FDRE}
     ds1/pattern_reg[0] {FDRE}
     ds1/pattern_reg[3] {FDRE}
-    ds1/pattern_reg[1] {FDRE}
-    ds1/pattern_reg[2] {FDRE}
 
 Related violations: <none>
 
